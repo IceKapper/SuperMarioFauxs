@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    cout << "Hello World!\n";
+    cout << "This is the test branch" << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
