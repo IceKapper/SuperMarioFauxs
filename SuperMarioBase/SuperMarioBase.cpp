@@ -42,7 +42,7 @@ bool InitSDL()
 			SCREEN_WIDTH,
 			SCREEN_HEIGHT,
 			SDL_WINDOW_SHOWN);
-		//did the window get created>
+		//did the window get created?
 		if (g_window == nullptr)
 		{
 			//window failed
@@ -62,6 +62,4 @@ void CLoseSDL()
 	//quit SDL subsystems
 	IMG_Quit();
 	SDL_Quit();
-
-	
 }

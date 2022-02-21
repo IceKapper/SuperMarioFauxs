@@ -1,3 +1,2 @@
 ﻿  SuperMarioBase.cpp
-SuperMarioBase.obj : error LNK2019: unresolved external symbol IMG_Quit referenced in function "void __cdecl CLoseSDL(void)" (?CLoseSDL@@YAXXZ)
-C:\Users\c022341e\Documents\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe : fatal error LNK1120: 1 unresolved externals
+  SuperMarioBase.vcxproj -> C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
