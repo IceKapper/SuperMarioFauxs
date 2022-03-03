@@ -1,20 +1,175 @@
-// SuperMarioBase.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_mixer.h>
+#include"constants.h"
+#include<iostream>
 
-#include <iostream>
+using namespace std;
 
-int main()
+//globals
+SDL_Window* g_window = nullptr;
+SDL_Renderer* g_renderer = nullptr;
+SDL_Texture* g_texture = nullptr;
+
+//Function prototypes
+bool InitSDL();
+void CLoseSDL();
+bool Update();
+void Render();
+SDL_Texture* LoadTextureFromFile(string path);
+void FreeTexture();
+
+int main(int argc, char* args[])
 {
-    std::cout << "Hello World!\n";
+	if (InitSDL())
+	{
+		//flag to check if we wish to quit
+		bool quit = false;
+
+		//game loop
+		while (!quit)
+		{
+			Render();
+			quit = Update();
+		}
+	}
+
+	CLoseSDL();
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+bool InitSDL() 
+{
+	//setup SDL
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	{
+		cout << "SDL did not initialise. Error " << SDL_GetError();
+		return false;
+	}
+	else
+	{
+		//setup passed to create window
+		g_window = SDL_CreateWindow("Games Engine Creation",
+			SDL_WINDOWPOS_UNDEFINED,
+			SDL_WINDOWPOS_UNDEFINED,
+			SCREEN_WIDTH,
+			SCREEN_HEIGHT,
+			SDL_WINDOW_SHOWN);
+		//did the window get created?
+		if (g_window == nullptr)
+		{
+			//window failed
+			cout << "Window was not created. Error: " << SDL_GetError();
+			return false;
+		}
+		return true;
+	}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	g_renderer = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED);
+
+	if (g_renderer != nullptr)
+	{
+		//init PNG loading
+		int imageFlags = IMG_INIT_PNG;
+		if (!(IMG_Init(imageFlags) & imageFlags));
+		{
+			cout << "SDL_Image could not initialise. Error: " << IMG_GetError();
+			return false;
+		}
+	}
+
+	//Load the background texture
+	g_texture = LoadTextureFromFile("Images\RequiredImages\test.bmp");
+	if (g_texture == nullptr)
+	{
+		return false;
+	}
+
+
+}
+
+void CLoseSDL()
+{
+	//release the window
+	SDL_DestroyWindow(g_window);
+	g_window = nullptr;
+
+	//quit SDL subsystems
+	IMG_Quit();
+	SDL_Quit();
+
+	//clear texture
+	FreeTexture();
+
+	//release the renderer
+	SDL_DestroyRenderer(g_renderer);
+	g_renderer = nullptr;
+}
+
+bool Update() 
+{
+	//Event handler
+	SDL_Event e;
+	SDL_PollEvent(&e);
+
+	//handle the events
+	switch (e.type)
+	{
+			//click the 'X' to quit
+	case SDL_QUIT:
+			return true;
+			break;
+	}
+
+	return false;
+}
+
+void Render()
+{
+	//clear the screen
+	SDL_SetRenderDrawColor(g_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+	SDL_RenderClear(g_renderer);
+
+	//set where to render the texture
+	SDL_Rect renderLocation = { 0,0,SCREEN_WIDTH, SCREEN_HEIGHT };
+
+	//Render to screen
+	SDL_RenderCopyEx(g_renderer, g_texture, NULL, &renderLocation, 0, NULL, SDL_FLIP_NONE);
+
+}
+
+SDL_Texture* LoadTextureFromFile(string path)
+{
+	//Remove memory used for a previous texture
+	FreeTexture();
+	SDL_Texture* p_texture = nullptr;
+
+	//Load Image
+	SDL_Surface* p_surface = IMG_Load(path.c_str());
+
+	//create the texture form the pixels on the surface
+	p_texture == SDL_CreateTextureFromSurface(g_renderer, p_surface);
+	if (p_texture == nullptr)
+	{
+		cout << "Unable to create texture from surface. Error: " << SDL_GetError();
+	}
+	else
+	{
+		cout << "Unable to create texture from surface. Error: " << IMG_GetError();
+	}
+
+	//Return Texture
+	return p_texture;
+}
+
+void FreeTexture()
+{
+	//Check to see if texture exists before removing it
+	if (g_texture != nullptr)
+	{
+		SDL_DestroyTexture(g_texture);
+		g_texture = nullptr;
+	}
+
+}
