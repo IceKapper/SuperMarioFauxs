@@ -15,6 +15,7 @@ SDL_Texture* g_texture = nullptr;
 bool InitSDL();
 void CLoseSDL();
 bool Update();
+
 void Render();
 SDL_Texture* LoadTextureFromFile(string path);
 void FreeTexture();
@@ -35,7 +36,6 @@ int main(int argc, char* args[])
 	}
 
 	CLoseSDL();
-
 	return 0;
 }
 
@@ -63,29 +63,35 @@ bool InitSDL()
 			cout << "Window was not created. Error: " << SDL_GetError();
 			return false;
 		}
-		return true;
-	}
 
-	g_renderer = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED);
+		g_renderer = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED);
 
-	if (g_renderer != nullptr)
-	{
-		//init PNG loading
-		int imageFlags = IMG_INIT_PNG;
-		if (!(IMG_Init(imageFlags) & imageFlags));
+		if (g_renderer != nullptr)
 		{
-			cout << "SDL_Image could not initialise. Error: " << IMG_GetError();
+			//init PNG loading
+			int imageFlags = IMG_INIT_PNG;
+			if (!(IMG_Init(imageFlags) & imageFlags))//had a semicolon
+			{
+				cout << "SDL_Image could not initialise. Error: " << IMG_GetError();
+				return false;
+			}
+
+			//Load the background texture
+			g_texture = LoadTextureFromFile("Images/test.bmp");
+			if (g_texture == nullptr)
+			{
+				return false;
+			}
+
+		}
+		else
+		{
+			cout << "Renderer could not initialise. Error: " << SDL_GetError();
 			return false;
 		}
 	}
 
-	//Load the background texture
-	g_texture = LoadTextureFromFile("Images\RequiredImages\test.bmp");
-	if (g_texture == nullptr)
-	{
-		return false;
-	}
-
+	return true;
 
 }
 
@@ -137,6 +143,9 @@ void Render()
 	//Render to screen
 	SDL_RenderCopyEx(g_renderer, g_texture, NULL, &renderLocation, 0, NULL, SDL_FLIP_NONE);
 
+	//Update the screen
+	SDL_RenderPresent(g_renderer);
+
 }
 
 SDL_Texture* LoadTextureFromFile(string path)
@@ -148,15 +157,21 @@ SDL_Texture* LoadTextureFromFile(string path)
 	//Load Image
 	SDL_Surface* p_surface = IMG_Load(path.c_str());
 
-	//create the texture form the pixels on the surface
-	p_texture == SDL_CreateTextureFromSurface(g_renderer, p_surface);
-	if (p_texture == nullptr)
+	if (p_surface != nullptr)
 	{
-		cout << "Unable to create texture from surface. Error: " << SDL_GetError();
-	}
-	else
-	{
-		cout << "Unable to create texture from surface. Error: " << IMG_GetError();
+		//create the texture from the pixels on the surface
+		p_texture = SDL_CreateTextureFromSurface(g_renderer, p_surface);
+		if (p_texture != nullptr)//was equals
+		{
+			cout << "Unable to create texture from surface. Error: " << SDL_GetError();
+		}
+		else
+		{
+			cout << "Unable to create texture from surface. Error: " << IMG_GetError();
+		}
+
+		//remove the loaded surface now that we have a texture
+		SDL_FreeSurface(p_surface);
 	}
 
 	//Return Texture
