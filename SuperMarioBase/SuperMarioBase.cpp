@@ -1,15 +1,18 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
-#include"constants.h"
-#include<iostream>
+#include <iostream>
+#include "constants.h"
+#include "Commons.h"
+#include "Texture2D.h"
+
 
 using namespace std;
 
 //globals
 SDL_Window* g_window = nullptr;
 SDL_Renderer* g_renderer = nullptr;
-SDL_Texture* g_texture = nullptr;
+Texture2D* g_texture = nullptr;
 
 //Function prototypes
 bool InitSDL();
@@ -17,8 +20,6 @@ void CLoseSDL();
 bool Update();
 
 void Render();
-SDL_Texture* LoadTextureFromFile(string path);
-void FreeTexture();
 
 int main(int argc, char* args[])
 {
@@ -77,8 +78,9 @@ bool InitSDL()
 			}
 
 			//Load the background texture
-			g_texture = LoadTextureFromFile("Images/test.bmp");
-			if (g_texture == nullptr)
+			g_texture = new Texture2D(g_renderer);
+
+			if (!g_texture->LoadFromFile("Images/test.bmp"))
 			{
 				return false;
 			}
@@ -105,12 +107,13 @@ void CLoseSDL()
 	IMG_Quit();
 	SDL_Quit();
 
-	//clear texture
-	FreeTexture();
-
 	//release the renderer
 	SDL_DestroyRenderer(g_renderer);
 	g_renderer = nullptr;
+
+	//release the texture
+	delete g_texture;
+	g_texture = nullptr;
 }
 
 bool Update() 
@@ -133,58 +136,14 @@ bool Update()
 
 void Render()
 {
-	//clear the screen
+	//Clear the screen
 	SDL_SetRenderDrawColor(g_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(g_renderer);
 
-	//set where to render the texture
-	SDL_Rect renderLocation = { 0,0,SCREEN_WIDTH, SCREEN_HEIGHT };
+	g_texture->Render(Vector2D(), SDL_FLIP_NONE);
 
-	//Render to screen
-	SDL_RenderCopyEx(g_renderer, g_texture, NULL, &renderLocation, 0, NULL, SDL_FLIP_NONE);
-
-	//Update the screen
+	//update the screen
 	SDL_RenderPresent(g_renderer);
 
 }
 
-SDL_Texture* LoadTextureFromFile(string path)
-{
-	//Remove memory used for a previous texture
-	FreeTexture();
-	SDL_Texture* p_texture = nullptr;
-
-	//Load Image
-	SDL_Surface* p_surface = IMG_Load(path.c_str());
-
-	if (p_surface != nullptr)
-	{
-		//create the texture from the pixels on the surface
-		p_texture = SDL_CreateTextureFromSurface(g_renderer, p_surface);
-		if (p_texture != nullptr)//was equals
-		{
-			cout << "Unable to create texture from surface. Error: " << SDL_GetError();
-		}
-		else
-		{
-			cout << "Unable to create texture from surface. Error: " << IMG_GetError();
-		}
-
-		//remove the loaded surface now that we have a texture
-		SDL_FreeSurface(p_surface);
-	}
-
-	//Return Texture
-	return p_texture;
-}
-
-void FreeTexture()
-{
-	//Check to see if texture exists before removing it
-	if (g_texture != nullptr)
-	{
-		SDL_DestroyTexture(g_texture);
-		g_texture = nullptr;
-	}
-
-}
