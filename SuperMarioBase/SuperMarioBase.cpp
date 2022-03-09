@@ -1,11 +1,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
-#include <iostream>
 #include "constants.h"
-#include "Commons.h"
 #include "Texture2D.h"
-
 
 using namespace std;
 

@@ -1,8 +1,9 @@
+#pragma once
 #ifndef _TEXTURE2D_H
 #define _TEXTURE2D_H
 #include <SDL.h>
 #include <string>
-#include <iostream>?
+#include <iostream>
 #include "Commons.h"
 
 class Texture2D
