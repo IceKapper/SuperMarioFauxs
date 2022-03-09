@@ -1,25 +1,28 @@
-﻿  SuperMarioBase.cpp
+﻿  GameScreenManager.cpp
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_GetError referenced in function "bool __cdecl InitSDL(void)" (?InitSDL@@YA_NXZ)
-SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "struct SDL_Texture * __cdecl LoadTextureFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTextureFromFile@@YAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture2D.obj : error LNK2001: unresolved external symbol _SDL_GetError
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function "bool __cdecl InitSDL(void)" (?InitSDL@@YA_NXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_DestroyWindow referenced in function "void __cdecl CLoseSDL(void)" (?CLoseSDL@@YAXXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function "bool __cdecl Update(void)" (?Update@@YA_NXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_CreateRenderer referenced in function "bool __cdecl InitSDL(void)" (?InitSDL@@YA_NXZ)
-SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_CreateTextureFromSurface referenced in function "struct SDL_Texture * __cdecl LoadTextureFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTextureFromFile@@YAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_SetRenderDrawColor referenced in function "void __cdecl Render(void)" (?Render@@YAXXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_RenderClear referenced in function "void __cdecl Render(void)" (?Render@@YAXXZ)
-SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_RenderCopyEx referenced in function "void __cdecl Render(void)" (?Render@@YAXXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_RenderPresent referenced in function "void __cdecl Render(void)" (?Render@@YAXXZ)
-SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_DestroyTexture referenced in function "void __cdecl FreeTexture(void)" (?FreeTexture@@YAXXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_DestroyRenderer referenced in function "void __cdecl CLoseSDL(void)" (?CLoseSDL@@YAXXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function "bool __cdecl InitSDL(void)" (?InitSDL@@YA_NXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function "void __cdecl CLoseSDL(void)" (?CLoseSDL@@YAXXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _IMG_Init referenced in function "bool __cdecl InitSDL(void)" (?InitSDL@@YA_NXZ)
 SuperMarioBase.obj : error LNK2019: unresolved external symbol _IMG_Quit referenced in function "void __cdecl CLoseSDL(void)" (?CLoseSDL@@YAXXZ)
-SuperMarioBase.obj : error LNK2019: unresolved external symbol _IMG_Load referenced in function "struct SDL_Texture * __cdecl LoadTextureFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTextureFromFile@@YAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture2D.obj : error LNK2019: unresolved external symbol _SDL_MapRGB referenced in function "public: bool __thiscall Texture2D::LoadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadFromFile@Texture2D@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture2D.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "public: bool __thiscall Texture2D::LoadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadFromFile@Texture2D@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture2D.obj : error LNK2019: unresolved external symbol _SDL_SetColorKey referenced in function "public: bool __thiscall Texture2D::LoadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadFromFile@Texture2D@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture2D.obj : error LNK2019: unresolved external symbol _SDL_CreateTextureFromSurface referenced in function "public: bool __thiscall Texture2D::LoadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadFromFile@Texture2D@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture2D.obj : error LNK2019: unresolved external symbol _SDL_RenderCopyEx referenced in function "public: void __thiscall Texture2D::Render(struct Vector2D,enum SDL_RendererFlip,double)" (?Render@Texture2D@@QAEXUVector2D@@W4SDL_RendererFlip@@N@Z)
+Texture2D.obj : error LNK2019: unresolved external symbol _SDL_DestroyTexture referenced in function "public: void __thiscall Texture2D::Free(void)" (?Free@Texture2D@@QAEXXZ)
+Texture2D.obj : error LNK2019: unresolved external symbol _IMG_Load referenced in function "public: bool __thiscall Texture2D::LoadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadFromFile@Texture2D@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
 SDL2\lib\x64\SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
 SDL2\lib\x64\SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
 SDL2\lib\x64\SDL2test.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
 SDL2\lib\x64\SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
-C:\Users\jayvi\Downloads\SuperMarioFauxs3\SuperMarioFauxs\Debug\SuperMarioBase.exe : fatal error LNK1120: 19 unresolved externals
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\Debug\SuperMarioBase.exe : fatal error LNK1120: 21 unresolved externals
