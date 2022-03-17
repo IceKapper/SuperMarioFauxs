@@ -1,28 +1,35 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
-#include"constants.h"
-#include<iostream>
+#include "constants.h"
+#include "Texture2D.h"
+#include "GameScreenManager.h"
 
 using namespace std;
 
 //globals
 SDL_Window* g_window = nullptr;
 SDL_Renderer* g_renderer = nullptr;
-SDL_Texture* g_texture = nullptr;
+GameScreenManager* game_screen_manager;
+Uint32 g_old_time;
+
 
 //Function prototypes
 bool InitSDL();
 void CLoseSDL();
 bool Update();
+
 void Render();
-SDL_Texture* LoadTextureFromFile(string path);
-void FreeTexture();
 
 int main(int argc, char* args[])
 {
 	if (InitSDL())
 	{
+		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);
+		//set the time
+		g_old_time = SDL_GetTicks();
+
+
 		//flag to check if we wish to quit
 		bool quit = false;
 
@@ -35,7 +42,6 @@ int main(int argc, char* args[])
 	}
 
 	CLoseSDL();
-
 	return 0;
 }
 
@@ -63,29 +69,30 @@ bool InitSDL()
 			cout << "Window was not created. Error: " << SDL_GetError();
 			return false;
 		}
-		return true;
-	}
 
-	g_renderer = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED);
+		g_renderer = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED);
 
-	if (g_renderer != nullptr)
-	{
-		//init PNG loading
-		int imageFlags = IMG_INIT_PNG;
-		if (!(IMG_Init(imageFlags) & imageFlags));
+		if (g_renderer != nullptr)
 		{
-			cout << "SDL_Image could not initialise. Error: " << IMG_GetError();
+			//init PNG loading
+			int imageFlags = IMG_INIT_PNG;
+			if (!(IMG_Init(imageFlags) & imageFlags))//had a semicolon
+			{
+				cout << "SDL_Image could not initialise. Error: " << IMG_GetError();
+				return false;
+			}
+
+
+
+		}
+		else
+		{
+			cout << "Renderer could not initialise. Error: " << SDL_GetError();
 			return false;
 		}
 	}
 
-	//Load the background texture
-	g_texture = LoadTextureFromFile("Images\RequiredImages\test.bmp");
-	if (g_texture == nullptr)
-	{
-		return false;
-	}
-
+	return true;
 
 }
 
@@ -99,16 +106,20 @@ void CLoseSDL()
 	IMG_Quit();
 	SDL_Quit();
 
-	//clear texture
-	FreeTexture();
-
 	//release the renderer
 	SDL_DestroyRenderer(g_renderer);
 	g_renderer = nullptr;
+
+	//destroy the game screen manager
+	delete game_screen_manager;
+	game_screen_manager = nullptr;
+
 }
 
 bool Update() 
 {
+	Uint32 new_time = SDL_GetTicks();
+
 	//Event handler
 	SDL_Event e;
 	SDL_PollEvent(&e);
@@ -122,54 +133,21 @@ bool Update()
 			break;
 	}
 
+	game_screen_manager->Update((float)(new_time - g_old_time) / 1000.0f, e);
+	g_old_time = new_time;
 	return false;
 }
 
 void Render()
 {
-	//clear the screen
+	//Clear the screen
 	SDL_SetRenderDrawColor(g_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(g_renderer);
 
-	//set where to render the texture
-	SDL_Rect renderLocation = { 0,0,SCREEN_WIDTH, SCREEN_HEIGHT };
+	game_screen_manager->Render();
 
-	//Render to screen
-	SDL_RenderCopyEx(g_renderer, g_texture, NULL, &renderLocation, 0, NULL, SDL_FLIP_NONE);
-
-}
-
-SDL_Texture* LoadTextureFromFile(string path)
-{
-	//Remove memory used for a previous texture
-	FreeTexture();
-	SDL_Texture* p_texture = nullptr;
-
-	//Load Image
-	SDL_Surface* p_surface = IMG_Load(path.c_str());
-
-	//create the texture form the pixels on the surface
-	p_texture == SDL_CreateTextureFromSurface(g_renderer, p_surface);
-	if (p_texture == nullptr)
-	{
-		cout << "Unable to create texture from surface. Error: " << SDL_GetError();
-	}
-	else
-	{
-		cout << "Unable to create texture from surface. Error: " << IMG_GetError();
-	}
-
-	//Return Texture
-	return p_texture;
-}
-
-void FreeTexture()
-{
-	//Check to see if texture exists before removing it
-	if (g_texture != nullptr)
-	{
-		SDL_DestroyTexture(g_texture);
-		g_texture = nullptr;
-	}
+	//update the screen
+	SDL_RenderPresent(g_renderer);
 
 }
+

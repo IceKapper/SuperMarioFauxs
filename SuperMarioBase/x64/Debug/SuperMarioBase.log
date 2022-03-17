@@ -1,5 +1,2 @@
-﻿  SuperMarioBase.cpp
-C:\Users\c022341e\Documents\Github\SuperMarioFauxs\SuperMarioBase\SuperMarioBase.cpp(83,34): warning C4129: 'R': unrecognized character escape sequence
-C:\Users\c022341e\Documents\Github\SuperMarioFauxs\SuperMarioBase\SuperMarioBase.cpp(75,44): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\Users\c022341e\Documents\Github\SuperMarioFauxs\SuperMarioBase\SuperMarioBase.cpp(152,12): warning C4553: '==': result of expression not used; did you intend '='?
-  SuperMarioBase.vcxproj -> C:\Users\c022341e\Documents\Github\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
+﻿  Character.cpp
+  SuperMarioBase.vcxproj -> C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
