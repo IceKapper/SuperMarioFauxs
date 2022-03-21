@@ -2,6 +2,7 @@
 #include "Texture2D.h"
 #include "constants.h"
 
+
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position)
 {
 	m_renderer = renderer;
@@ -39,59 +40,42 @@ void Character::Render()
 
 void Character::Update(float deltaTime, SDL_Event e)
 {
-	if (m_moving_left)
+	//deal with jumping first
+	if (m_jumping)
 	{
-		MoveLeft(deltaTime);
-	}
-	else if (m_moving_right)
-	{
-		MoveRight(deltaTime);
-	}
+		//adjust position
+		m_position.y -= m_jump_force * deltaTime;
 
-	switch (e.type)
-	{
-
-	case SDL_KEYDOWN:
-
-		switch (e.key.keysym.sym)
-		{
-		case SDLK_LEFT:
-			m_moving_left = true;
-			break;
-
-		case SDLK_RIGHT:
-			m_moving_right = true;
-			break;
-
-		default:
-			break;
-		}
-
-	default:
-		break;
+		//reduce jump force
+		m_jump_force -= JUMP_FORCE_DECREMENT * deltaTime;
+		
+		//is jump force 0.0f?
+		if (m_jump_force <= 0.0f)
+			m_jumping = false;
 	}
 
-	switch(e.type)
+	AddGravity(deltaTime);
+}
+
+void Character::AddGravity(float deltaTime)
+{
+	if ((m_position.y + 64) <= SCREEN_HEIGHT)
 	{
+		m_position.y += GRAVITYSPEED * deltaTime;
+	}
+	else
+	{
+		m_can_jump = true;
+	}
+}
 
-	case SDL_KEYUP:
-
-		switch (e.key.keysym.sym)
-		{
-		case SDLK_LEFT:
-			m_moving_left = false;
-			break;
-
-		case SDLK_RIGHT:
-			m_moving_right = false;
-			break;
-
-		default:
-			break;
-		}
-
-	default:
-		break;
+void Character::Jump()
+{
+	if (!m_jumping)
+	{
+		m_jump_force = INITIAL_JUMP_FORCE;
+		m_jumping = true;
+		m_can_jump = false;
 	}
 }
 
