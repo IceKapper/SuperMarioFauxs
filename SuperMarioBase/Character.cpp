@@ -1,5 +1,4 @@
 #include "Character.h"
-#include "Texture2D.h"
 #include "constants.h"
 
 
@@ -11,6 +10,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	m_facing_direction = FACING_RIGHT;
 	m_moving_left = false;
 	m_moving_right = false;
+	m_collision_radius = 15.0f;
 
 
 	if (!m_texture->LoadFromFile(imagePath))
@@ -100,3 +100,4 @@ void Character::MoveRight(float deltaTime)
 	m_facing_direction = FACING_RIGHT;
 	m_position.x += deltaTime * MOVEMENTSPEED;
 }
+

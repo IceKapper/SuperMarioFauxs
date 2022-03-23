@@ -1,6 +1,8 @@
 #include "GameScreenLevel1.h"
 #include "Texture2D.h"
+#include "Collisions.h"
 #include <iostream>
+using namespace std;
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
 {
@@ -28,6 +30,10 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
 	character_mario->Update(deltaTime, e);
 	character_luigi->Update(deltaTime, e);
+	if (Collisions::Instance()->Circle(character_mario->GetCollisionRadius(), character_luigi->GetCollisionRadius()))
+	{
+		cout << "Circle hit!" << endl;
+	}
 }
 
 bool GameScreenLevel1::SetUpLevel()
