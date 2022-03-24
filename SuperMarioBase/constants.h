@@ -3,6 +3,12 @@
 #define SCREEN_WIDTH 512
 #define SCREEN_HEIGHT 416
 
+//Map Dimensions
+#define MAP_WIDTH 16
+#define MAP_HEIGHT 13
+#define TILE_WIDTH 32
+#define TILE_HEIGHT 32
+
 //Character speed
 #define MOVEMENTSPEED 150.0f
 #define GRAVITYSPEED 295.0f
