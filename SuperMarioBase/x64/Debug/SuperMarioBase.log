@@ -1,4 +1,31 @@
 ﻿  Character.cpp
-C:\Users\c022341e\Documents\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\c022341e\Documents\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SuperMarioBase.vcxproj -> C:\Users\c022341e\Documents\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CharacterLuigi.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CharacterMario.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Collisions.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameScreen.cpp
+  GameScreenLevel1.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameScreenManager.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  LevelMap.cpp
+  SuperMarioBase.cpp
+  Texture2D.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Texture2D.cpp(59,14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Texture2D.cpp(60,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Texture2D.cpp(67,42): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Texture2D.cpp(67,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Texture2D.cpp(67,58): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Texture2D.cpp(67,58): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  LINK : C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe not found or not built by the last incremental link; performing full link
+  SuperMarioBase.vcxproj -> C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
