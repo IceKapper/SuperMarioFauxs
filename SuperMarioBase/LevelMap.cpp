@@ -48,7 +48,7 @@ void LevelMap::ChangeTileAt(unsigned int row, unsigned int column, unsigned int 
 {
 	if (column < MAP_HEIGHT && row < MAP_WIDTH)
 	{
-		
+		m_map[row][column] = new_value;
 	}
 
 }

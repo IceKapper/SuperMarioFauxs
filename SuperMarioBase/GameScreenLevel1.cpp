@@ -17,6 +17,8 @@ GameScreenLevel1::~GameScreenLevel1()
 	character_mario = nullptr;
 	delete character_luigi;
 	character_luigi = nullptr;
+	delete m_pow_block;
+	m_pow_block = nullptr;
 }
 
 void GameScreenLevel1::Render()
@@ -25,13 +27,14 @@ void GameScreenLevel1::Render()
 	m_background_texture->Render(Vector2D(), SDL_FLIP_NONE);
 	character_mario->Render();
 	character_luigi->Render();
+	m_pow_block->Render();
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
 	character_mario->Update(deltaTime, e);
 	character_luigi->Update(deltaTime, e);
-	if (Collisions::Instance()->Circle(character_mario->GetCollisionRadius(), character_luigi->GetCollisionRadius()))
+	if (Collisions::Instance()->Box(character_mario->GetCollisionBox(), character_luigi->GetCollisionBox()))
 	{
 		cout << "Circle hit!" << endl;
 	}
@@ -56,6 +59,8 @@ bool GameScreenLevel1::SetUpLevel()
 	{
 		return true;
 	}
+
+	m_pow_block = new PowBlock(m_renderer, m_level_map);
 }
 
 void GameScreenLevel1::SetLevelMap()
@@ -83,4 +88,12 @@ void GameScreenLevel1::SetLevelMap()
 	//set the new one
 	m_level_map = new LevelMap(map);
 
+}
+
+void GameScreenLevel1::UpdatePowBlock()
+{
+	if (Collisions::Instance()->Box(m_pow_block->GetCollisionBox(), character_mario->GetCollisionBox()))
+	{
+
+	}
 }

@@ -19,6 +19,8 @@ public:
 	int GetWidth() { return m_width; }
 	int GetHeight() { return m_height; }
 
+	void Render(SDL_Rect src_rect, SDL_Rect src_dest, SDL_RendererFlip flip, double angle = 0.0);
+
 private:
 	SDL_Renderer* m_renderer;
 	SDL_Texture* m_texture;
