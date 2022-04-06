@@ -1,20 +1,4 @@
 ﻿  GameScreenLevel1.cpp
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  GameScreenManager.cpp
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  PowBlock.cpp
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(17,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(18,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(35,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(38,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(38,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(38,62): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(38,62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(41,89): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(41,89): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(41,108): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\c022341e\Documents\SuperMarioFauxs\SuperMarioBase\PowBlock.cpp(41,108): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  SuperMarioBase.vcxproj -> C:\Users\c022341e\Documents\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SuperMarioBase.vcxproj -> C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe

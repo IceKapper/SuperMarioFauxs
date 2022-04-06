@@ -20,7 +20,8 @@ public:
 	virtual void AddGravity(float deltaTime);
 	virtual void Jump();
 
-
+	bool IsJumping() { return m_jumping; }
+	virtual void CancelJump() { m_jump_force = 0; }
 
 	void SetPosition(Vector2D new_position);
 	Vector2D GetPosition();

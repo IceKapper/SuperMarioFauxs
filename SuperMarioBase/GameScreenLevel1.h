@@ -25,14 +25,22 @@ public:
 	void UpdatePowBlock();
 
 private: 
-	Texture2D* m_background_texture;
 	bool SetUpLevel();
+	void SetLevelMap();
+	void DoScreenShake();
+
+	Texture2D* m_background_texture;
 	CharacterMario* character_mario;
 	CharacterLuigi* character_luigi;
 	PowBlock* m_pow_block;
-
-	void SetLevelMap();
 	LevelMap* m_level_map;
+
+	bool m_screenshake;
+	float m_shake_time;
+	float m_wobble;
+	float m_background_yPos;
+
+
 };
 
 #endif //_GAMESCREENLEVEL1_H

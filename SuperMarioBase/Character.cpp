@@ -12,6 +12,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	m_moving_right = false;
 	m_collision_radius = 15.0f;
 	m_current_level_map = map;
+	m_jumping = false;
 
 
 	if (!m_texture->LoadFromFile(imagePath))
