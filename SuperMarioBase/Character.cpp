@@ -13,6 +13,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	m_collision_radius = 15.0f;
 	m_current_level_map = map;
 	m_jumping = false;
+	m_alive = true;
 
 
 	if (!m_texture->LoadFromFile(imagePath))
@@ -115,5 +116,10 @@ void Character::MoveRight(float deltaTime)
 {
 	m_facing_direction = FACING_RIGHT;
 	m_position.x += deltaTime * MOVEMENTSPEED;
+}
+
+bool Character::SetAlive(bool is_alive)
+{
+	m_alive = is_alive;
 }
 

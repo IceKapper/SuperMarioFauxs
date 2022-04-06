@@ -1,4 +1,66 @@
-﻿  GameScreenLevel1.cpp
+﻿  Character.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CharacterKoopa.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(10,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(11,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(72,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(76,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(79,42): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(79,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(79,61): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(79,61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(80,89): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(80,89): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(80,108): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\CharacterKoopa.cpp(80,108): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  CharacterLuigi.cpp
 C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SuperMarioBase.vcxproj -> C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe
+  CharacterMario.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Collisions.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameScreenLevel1.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.h(43,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.h(43,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.h(43,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(23,2): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(29,23): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(31,3): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(163,7): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(166,32): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(169,8): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(172,9): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(172,50): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(172,99): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(172,154): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(173,6): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(176,5): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(179,10): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(179,52): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(179,96): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(179,137): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(185,41): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(187,11): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(189,8): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(196,41): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(198,11): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(200,8): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(208,10): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(216,5): error C2065: 'm_enemies': undeclared identifier
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.cpp(216,21): error C2065: 'm_enemies': undeclared identifier
+  GameScreenManager.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(30,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.h(43,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.h(43,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\GameScreenLevel1.h(43,35): error C2238: unexpected token(s) preceding ';'
+  Generating Code...
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\Character.cpp(124): error C4716: 'Character::SetAlive': must return a value

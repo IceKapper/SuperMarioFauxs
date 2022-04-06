@@ -38,11 +38,14 @@ protected:
 	bool m_moving_right;
 	bool m_jumping;
 	bool m_can_jump;
+	bool m_alive;
 	float m_jump_force;
 	float m_collision_radius;
 
 	virtual void MoveLeft(float deltaTime);
 	virtual void MoveRight(float deltaTime);
+	bool SetAlive(bool is_alive);
+	bool GetAlive() { return m_alive; }
 
 private:
 	FACING m_facing_direction;
