@@ -118,7 +118,7 @@ void Character::MoveRight(float deltaTime)
 	m_position.x += deltaTime * MOVEMENTSPEED;
 }
 
-bool Character::SetAlive(bool is_alive)
+void Character::SetAlive(bool is_alive)
 {
 	m_alive = is_alive;
 }

@@ -22,6 +22,8 @@ public:
 
 	bool IsJumping() { return m_jumping; }
 	virtual void CancelJump() { m_jump_force = 0; }
+	void SetAlive(bool is_alive);
+	bool GetAlive() { return m_alive; }
 
 	void SetPosition(Vector2D new_position);
 	Vector2D GetPosition();
@@ -44,8 +46,6 @@ protected:
 
 	virtual void MoveLeft(float deltaTime);
 	virtual void MoveRight(float deltaTime);
-	bool SetAlive(bool is_alive);
-	bool GetAlive() { return m_alive; }
 
 private:
 	FACING m_facing_direction;

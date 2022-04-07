@@ -41,13 +41,11 @@ void CharacterKoopa::Update(float deltaTime, SDL_Event e)
 		//Enemy is not injured so move
 		if (m_facing_direction == FACING_LEFT)
 		{
-			m_moving_left = true;
-			m_moving_right = false;
+			m_position.x -= deltaTime * m_movement_speed;
 		}
 		else if (m_facing_direction == FACING_RIGHT)
 		{
-			m_moving_right = true;
-			m_moving_left = false;
+			m_position.x += deltaTime * m_movement_speed;
 		}
 	}
 	else

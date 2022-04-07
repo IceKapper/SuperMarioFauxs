@@ -12,6 +12,7 @@
 class Texture2D;
 class CharacterMario;
 class CharacterLuigi;
+class CharacterKoopa;
 class PowBlock;
 
 class GameScreenLevel1 : GameScreen
@@ -37,17 +38,19 @@ private:
 	Texture2D* m_background_texture;
 	CharacterMario* character_mario;
 	CharacterLuigi* character_luigi;
+	CharacterKoopa* koopa;
 	PowBlock* m_pow_block;
 	LevelMap* m_level_map;
 
-	vector<CharacterKoopa*> m_enemies;
+	std::vector<CharacterKoopa*> m_enemies;
 
 	bool m_screenshake;
 	float m_shake_time;
 	float m_wobble;
 	float m_background_yPos;
 
-
+	float m_koopa_timer;
+	
 };
 
 #endif //_GAMESCREENLEVEL1_H
