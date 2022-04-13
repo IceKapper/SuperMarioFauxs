@@ -25,6 +25,8 @@ public:
 	void SetAlive(bool is_alive);
 	bool GetAlive() { return m_alive; }
 
+	virtual void FlipDirection();
+
 	void SetPosition(Vector2D new_position);
 	Vector2D GetPosition();
 

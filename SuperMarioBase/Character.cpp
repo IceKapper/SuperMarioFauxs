@@ -96,6 +96,20 @@ void Character::Jump()
 	}
 }
 
+void Character::FlipDirection()
+{
+	std::cout << "flipping" << std::endl;
+	//Flip to opposite direction
+	if (m_facing_direction == FACING_LEFT)
+	{
+		m_facing_direction = FACING_RIGHT;
+	}
+	else
+	{
+		m_facing_direction = FACING_LEFT;
+	}
+}
+
 void Character::SetPosition(Vector2D new_position)
 {
 	m_position = new_position;

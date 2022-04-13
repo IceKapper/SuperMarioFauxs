@@ -16,6 +16,7 @@ public:
 	virtual void Update(float deltaTime, SDL_Event e);
 	virtual void Render();
 	bool GetInjured() { return m_injured; }
+	void FlipDirection();
 
 private:
 	void FlipRightWayUp();

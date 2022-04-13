@@ -8,6 +8,11 @@ using namespace std;
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
 {
 	m_level_map = nullptr;
+	m_koopa_timer = KOOPA_SPAWN_TIMER;
+	m_koopa_position = 1;
+	m_coin_timer = COIN_SPAWN_TIMER;
+	m_coin_position = 1;
+	m_coin_counter = 0;
 	SetUpLevel();
 }
 
@@ -21,6 +26,7 @@ GameScreenLevel1::~GameScreenLevel1()
 	delete m_pow_block;
 	m_pow_block = nullptr;
 	m_enemies.clear();
+	m_coins.clear();
 }
 
 void GameScreenLevel1::Render()
@@ -29,6 +35,12 @@ void GameScreenLevel1::Render()
 	for (int i = 0; i  < m_enemies.size(); i++)
 	{
 		m_enemies[i]->Render();
+	}
+
+	//draw the coins
+	for (int i = 0; i < m_coins.size(); i++)
+	{
+		m_coins[i]->Render();
 	}
 
 	//draw the background
@@ -45,6 +57,7 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	character_luigi->Update(deltaTime, e);
 	UpdatePowBlock();
 	UpdateEnemies(deltaTime, e);
+	UpdateCoins(deltaTime, e);
 
 	//Check for Player collision
 	if (Collisions::Instance()->Box(character_mario->GetCollisionBox(), character_luigi->GetCollisionBox()))
@@ -66,6 +79,49 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 			m_background_yPos = 0.0f;
 		}
 	}
+
+	//Spawn Koopa at set intervals, switching between 2 positions
+	m_koopa_timer -= deltaTime;
+	if (m_koopa_timer <= 0)
+	{
+		if (m_koopa_position == 1)
+		{
+			CreateKoopa(Vector2D(50, 32), FACING_RIGHT, KOOPA_SPEED);
+			m_koopa_position = 2;
+		}
+		else if (m_koopa_position == 2)
+		{
+			CreateKoopa(Vector2D(425, 32), FACING_LEFT, KOOPA_SPEED);
+			m_koopa_position = 1;
+		}
+		else
+		{
+			cerr << "Koopa Spawn Positon not set" << endl;
+		}
+		m_koopa_timer = KOOPA_SPAWN_TIMER;
+	}
+
+	//Spawn Coins at set intervals, switching between 2 positions
+	m_coin_timer -= deltaTime;
+	if (m_coin_timer <= 0)
+	{
+		if (m_coin_position == 1)
+		{
+			CreateCoin(Vector2D(425, 32), FACING_LEFT, COIN_SPEED);
+			m_coin_position = 2;
+		}
+		else if (m_coin_position == 2)
+		{
+			CreateCoin(Vector2D(50, 32), FACING_RIGHT, COIN_SPEED);
+			m_coin_position = 1;
+		}
+		else
+		{
+			cerr << "Coin Spawn Positon not set" << endl;
+		}
+		m_koopa_timer = COIN_SPAWN_TIMER;
+	}
+
 }
 
 bool GameScreenLevel1::SetUpLevel()
@@ -171,6 +227,13 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 		int enemyIndexToDelete = -1;
 		for (unsigned int i = 0; i < m_enemies.size(); i++)
 		{
+			//Flip enemies that reach the edges of the screen
+			if (m_enemies[i]->GetPosition().x >= (SCREEN_WIDTH - 40.0f) || m_enemies[i]->GetPosition().x <= 10.0f)
+			{
+				if (m_enemies[i]->GetPosition().y > 300.0f)
+					m_enemies[i]->FlipDirection();
+			}
+
 			//check if the enemy is on the bottom row of tiles
 			if (m_enemies[i]->GetPosition().y > 300.0f)
 			{
@@ -229,4 +292,68 @@ void GameScreenLevel1::CreateKoopa(Vector2D position, FACING direction, float sp
 {
 	koopa = new CharacterKoopa(m_renderer, "Images/RequiredImages/koopa.png", position, m_level_map, direction, speed);
 	m_enemies.push_back(koopa);
+}
+
+void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
+{
+	if (!m_coins.empty())
+	{
+		int coinIndexToDelete = -1;
+		for (unsigned int i = 0; i < m_coins.size(); i++)
+		{
+			//Flip coins that reach the edges of the screen as long as they're not on the bottom row of tiles
+			if (m_coins[i]->GetPosition().x >= (SCREEN_WIDTH - 40.0f) || m_coins[i]->GetPosition().x <= 10.0f)
+			{
+				if (m_coins[i]->GetPosition().y > 300.0f)
+					m_coins[i]->FlipDirection();
+			}
+
+			//check if the coins are on the bottom row of tiles
+			if (m_coins[i]->GetPosition().y > 300.0f)
+			{
+				//is the coin off screen to the left or right?
+				if (m_coins[i]->GetPosition().x < (float)(-m_coins[i]->GetCollisionBox().width * 0.5f) || m_coins[i]->GetPosition().x > SCREEN_WIDTH - (float)(m_coins[i]->GetCollisionBox().width * 0.55f))
+					m_coins[i]->SetAlive(false);
+			}
+
+			//Now do the update
+			m_coins[i]->Update(deltaTime, e);
+
+			//Check to see if a coin collides with a player
+			if ((m_coins[i]->GetPosition().y > 300.0f || m_coins[i]->GetPosition().y <= 64.0f) && (m_coins[i]->GetPosition().x < 64.0f || m_coins[i]->GetPosition().x > SCREEN_WIDTH - 96.0f))
+			{
+				//ignore collisions behind pipe
+			}
+			else
+			{
+				if (Collisions::Instance()->Circle(m_coins[i]->GetCollisionRadius(), character_mario->GetCollisionRadius()))
+				{
+					m_coin_counter++;
+					cout << "You have " << m_coin_counter << " coins!" << endl;
+					m_coins[i]->SetAlive(false);
+				}
+				if (Collisions::Instance()->Circle(m_coins[i]->GetCollisionRadius(), character_luigi->GetCollisionRadius()))
+				{
+					m_coin_counter++;
+					cout << "You have " << m_coin_counter << " coins!" << endl;
+					m_coins[i]->SetAlive(false);
+				}
+			}
+			if (!m_coins[i]->GetAlive())
+			{
+				coinIndexToDelete = i;
+			}
+		}
+		//remove used coins -1 each update
+		if (coinIndexToDelete != -1)
+		{
+			m_coins.erase(m_coins.begin() + coinIndexToDelete);
+		}
+	}
+}
+
+void GameScreenLevel1::CreateCoin(Vector2D position, FACING direction, float speed)
+{
+	coin = new CharacterCoin(m_renderer, "Images/RequiredImages/Coin.png", position, m_level_map, direction, speed);
+	m_coins.push_back(coin);
 }

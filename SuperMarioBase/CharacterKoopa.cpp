@@ -90,6 +90,14 @@ void CharacterKoopa::Render()
 
 void CharacterKoopa::FlipRightWayUp()
 {
+	FlipDirection();
+
+	m_injured = false;
+	Jump();
+}
+
+void CharacterKoopa::FlipDirection()
+{
 	//Flip to opposite direction
 	if (m_facing_direction == FACING_LEFT)
 	{
@@ -99,7 +107,4 @@ void CharacterKoopa::FlipRightWayUp()
 	{
 		m_facing_direction = FACING_LEFT;
 	}
-
-	m_injured = false;
-	Jump();
 }
