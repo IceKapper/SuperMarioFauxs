@@ -20,6 +20,11 @@ CharacterCoin::~CharacterCoin()
 
 void CharacterCoin::Update(float deltaTime, SDL_Event e)
 {
+	//use the code within the base class
+	Character::Update(deltaTime, e);
+
+	AnimateCoin(deltaTime);
+
 	//move
 	if (m_facing_direction == FACING_LEFT)
 	{
@@ -33,21 +38,6 @@ void CharacterCoin::Update(float deltaTime, SDL_Event e)
 
 void CharacterCoin::Render()
 {
-	m_frame_delay -= deltaTime;
-	//Looping between sprites with animation
-	if (m_frame_delay <= 0.0f)
-	{
-		//reset drame delay amount
-		m_frame_delay = ANIMATION_DELAY;
-
-		//move the frame over
-		m_current_frame++;
-
-		//loop frame around if it goes beyond number of frames
-		if (m_current_frame > 2)
-			m_current_frame = 0;
-	}
-
 	//get the portion of the sprite sheet you want to draw {xpos, ypos, width of sprite, height of sprite}
 	SDL_Rect portion_of_sprite = { m_single_sprite_w * m_current_frame, 0, m_single_sprite_w, m_single_sprite_h };
 	SDL_Rect dest_rect = { static_cast<int>(m_position.x), static_cast<int>(m_position.y), m_single_sprite_w, m_single_sprite_h };
@@ -73,5 +63,23 @@ void CharacterCoin::FlipDirection()
 	else
 	{
 		m_facing_direction = FACING_LEFT;
+	}
+}
+
+void CharacterCoin::AnimateCoin(float deltaTime)
+{
+	m_frame_delay -= deltaTime;
+	//Looping between sprites with animation
+	if (m_frame_delay <= 0.0f)
+	{
+		//reset drame delay amount
+		m_frame_delay = ANIMATION_DELAY;
+
+		//move the frame over
+		m_current_frame++;
+
+		//loop frame around if it goes beyond number of frames
+		if (m_current_frame > 2)
+			m_current_frame = 0;
 	}
 }

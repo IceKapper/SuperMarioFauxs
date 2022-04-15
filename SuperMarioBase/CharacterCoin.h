@@ -14,6 +14,8 @@ public:
 	virtual void FlipDirection();
 
 private:
+
+	virtual void AnimateCoin(float deltaTime);
 	float m_single_sprite_w;
 	float m_single_sprite_h;
 

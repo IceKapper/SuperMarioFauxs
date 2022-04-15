@@ -119,7 +119,7 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 		{
 			cerr << "Coin Spawn Positon not set" << endl;
 		}
-		m_koopa_timer = COIN_SPAWN_TIMER;
+		m_coin_timer = COIN_SPAWN_TIMER;
 	}
 
 }
@@ -230,7 +230,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			//Flip enemies that reach the edges of the screen
 			if (m_enemies[i]->GetPosition().x >= (SCREEN_WIDTH - 40.0f) || m_enemies[i]->GetPosition().x <= 10.0f)
 			{
-				if (m_enemies[i]->GetPosition().y > 300.0f)
+				if (m_enemies[i]->GetPosition().y < 300.0f)
 					m_enemies[i]->FlipDirection();
 			}
 
@@ -260,7 +260,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					}
 					else
 					{
-						//Kill Mario
+						cout << "Mario dies" << endl;
 					}
 				}
 				if (Collisions::Instance()->Circle(m_enemies[i]->GetCollisionRadius(), character_luigi->GetCollisionRadius()))
@@ -304,7 +304,7 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 			//Flip coins that reach the edges of the screen as long as they're not on the bottom row of tiles
 			if (m_coins[i]->GetPosition().x >= (SCREEN_WIDTH - 40.0f) || m_coins[i]->GetPosition().x <= 10.0f)
 			{
-				if (m_coins[i]->GetPosition().y > 300.0f)
+				if (m_coins[i]->GetPosition().y < 300.0f)
 					m_coins[i]->FlipDirection();
 			}
 

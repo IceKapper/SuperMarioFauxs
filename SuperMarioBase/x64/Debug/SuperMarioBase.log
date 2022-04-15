@@ -1,14 +1,4 @@
-﻿  SuperMarioBase.cpp
-SuperMarioBase.obj : error LNK2019: unresolved external symbol "void __cdecl Render(void)" (?Render@@YAXXZ) referenced in function main
-    Hint on symbols that are defined and could potentially match:
-      "void __cdecl Render(float)" (?Render@@YAXM@Z)
-      "public: virtual void __cdecl Character::Render(void)" (?Render@Character@@UEAAXXZ)
-      "public: virtual void __cdecl CharacterCoin::Render(float)" (?Render@CharacterCoin@@UEAAXM@Z)
-      "public: virtual void __cdecl CharacterKoopa::Render(void)" (?Render@CharacterKoopa@@UEAAXXZ)
-      "public: virtual void __cdecl GameScreen::Render(float)" (?Render@GameScreen@@UEAAXM@Z)
-      "public: virtual void __cdecl GameScreenLevel1::Render(float)" (?Render@GameScreenLevel1@@UEAAXM@Z)
-      "public: void __cdecl GameScreenManager::Render(float)" (?Render@GameScreenManager@@QEAAXM@Z)
-      "public: void __cdecl PowBlock::Render(void)" (?Render@PowBlock@@QEAAXXZ)
-      "public: void __cdecl Texture2D::Render(struct SDL_Rect,struct SDL_Rect,enum SDL_RendererFlip,double)" (?Render@Texture2D@@QEAAXUSDL_Rect@@0W4SDL_RendererFlip@@N@Z)
-      "public: void __cdecl Texture2D::Render(struct Vector2D,enum SDL_RendererFlip,double)" (?Render@Texture2D@@QEAAXUVector2D@@W4SDL_RendererFlip@@N@Z)
-C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe : fatal error LNK1120: 1 unresolved externals
+﻿  GameScreenLevel1.cpp
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(34,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\SuperMarioBase\character.h(34,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SuperMarioBase.vcxproj -> C:\Users\Mike\Documents\Education\Staffordshire University\Year 2 (Level 4)\Games Engine Creation\GitHub\SuperMarioFauxs\x64\Debug\SuperMarioBase.exe

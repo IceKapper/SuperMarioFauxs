@@ -10,7 +10,7 @@ GameScreen::~GameScreen()
 	m_renderer = nullptr;
 }
 
-void GameScreen::Render(float deltaTime)
+void GameScreen::Render()
 {
 
 }
