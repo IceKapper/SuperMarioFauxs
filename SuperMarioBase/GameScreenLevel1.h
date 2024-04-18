@@ -2,9 +2,14 @@
 #ifndef _GAMESCREENLEVEL1_H
 #define _GAMESCREENLEVEL1_H
 #include "GameScreen.h"
+#include "CharacterMario.h"
+#include "CharacterLuigi.h"
 #include "Commons.h"
+#include "LevelMap.h"
 
 class Texture2D;
+class CharacterMario;
+class CharacterLuigi;
 
 class GameScreenLevel1 : GameScreen
 {
@@ -19,6 +24,11 @@ public:
 private: 
 	Texture2D* m_background_texture;
 	bool SetUpLevel();
+	CharacterMario* character_mario;
+	CharacterLuigi* character_luigi;
+
+	void SetLevelMap();
+	LevelMap* m_level_map;
 };
 
 #endif //_GAMESCREENLEVEL1_H

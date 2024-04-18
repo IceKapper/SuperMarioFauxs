@@ -28,4 +28,35 @@ enum SCREENS
 	SCREEN_HIGHSCORES
 };
 
+enum FACING
+{
+	FACING_LEFT,
+	FACING_RIGHT
+};
 
+struct Rect2D
+{
+
+	float x, y, width, height;
+
+	Rect2D(float x_pos, float y_pos, float width, float height)
+	{
+		x = x_pos;
+		y = y_pos;
+		this->width = width;
+		this->height = height;
+	}
+};
+
+struct Radius2D
+{
+	float x, y, radius;
+
+	Radius2D(float x_pos, float y_pos, float radius)
+	{
+		x = x_pos;
+		y = y_pos;
+		this->radius = radius;
+
+	}
+};
